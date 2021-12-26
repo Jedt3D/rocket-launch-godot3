@@ -1,9 +1,41 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Rocket Launch Resources/RocketShip.png" type="Texture" id=1]
-[ext_resource path="res://ยานอวกาศ.gd" type="Script" id=2]
+[ext_resource path="res://สคริปต์/ยานอวกาศ.gd" type="Script" id=2]
+[ext_resource path="res://สคริปต์/โลก.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ยานอวกาศ:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 620 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "ยิงจรวด"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ยานอวกาศ:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 640, 620 ), Vector2( 640, -103 ) ]
+}
 
 [node name="World" type="Node"]
+script = ExtResource( 3 )
 
 [node name="ยานอวกาศ" type="Sprite" parent="."]
 position = Vector2( 640, 620 )
@@ -13,3 +45,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": "The Rocketship ที่เราจะเอาไว้เป็นยานหลักของเกมส์"
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+"anims/ยิงจรวด" = SubResource( 2 )
