@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Rocket Launch Resources/RocketShip.png" type="Texture" id=1]
-[ext_resource path="res://สคริปต์/ยานอวกาศ.gd" type="Script" id=2]
-[ext_resource path="res://สคริปต์/โลก.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Spaceship.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=3]
+[ext_resource path="res://Rocket Launch Resources/LaunchButton.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("ยานอวกาศ:position")
+tracks/0/path = NodePath("Spaceship:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,7 +23,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 resource_name = "ยิงจรวด"
 tracks/0/type = "value"
-tracks/0/path = NodePath("ยานอวกาศ:position")
+tracks/0/path = NodePath("Spaceship:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -37,7 +38,15 @@ tracks/0/keys = {
 [node name="World" type="Node"]
 script = ExtResource( 3 )
 
-[node name="ยานอวกาศ" type="Sprite" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.0352941, 0.0352941, 0.0901961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spaceship" type="Sprite" parent="."]
 position = Vector2( 640, 620 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
@@ -49,3 +58,16 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
 "anims/ยิงจรวด" = SubResource( 2 )
+
+[node name="LaunchButton" type="TextureButton" parent="."]
+margin_left = 1104.0
+margin_top = 624.0
+margin_right = 1152.0
+margin_bottom = 640.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="LaunchButton" to="." method="_on_LaunchButton_pressed"]
