@@ -1,54 +1,36 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Pig.png" type="Texture" id=1]
+[ext_resource path="res://Piggy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Apple.png" type="Texture" id=2]
-[ext_resource path="res://Pig.gd" type="Script" id=3]
-
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 6.0
-height = 10.0
 
 [node name="World" type="Node"]
 
 [node name="Background" type="ColorRect" parent="."]
-margin_right = 640.0
-margin_bottom = 360.0
+margin_right = 320.0
+margin_bottom = 180.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Piggy" type="Area2D" parent="."]
-position = Vector2( 25, 24 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true,
-"_editor_description_": "sprites  หมูน้อย 3 frames"
-}
+[node name="Apples" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="Piggy"]
-position = Vector2( 8, 0 )
-texture = ExtResource( 1 )
-offset = Vector2( 0, -4 )
-hframes = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Piggy"]
-position = Vector2( 8, 0 )
-rotation = 1.5708
-shape = SubResource( 1 )
-
-[node name="Apple" type="Sprite" parent="."]
-position = Vector2( 502, 237 )
+[node name="Apple" type="Sprite" parent="Apples"]
+position = Vector2( 268, 158 )
 texture = ExtResource( 2 )
 
-[node name="Apple2" type="Sprite" parent="."]
-position = Vector2( 294, 200 )
+[node name="Apple2" type="Sprite" parent="Apples"]
+position = Vector2( 96, 106 )
 texture = ExtResource( 2 )
 
-[node name="Apple3" type="Sprite" parent="."]
-position = Vector2( 227, 265 )
+[node name="Apple3" type="Sprite" parent="Apples"]
+position = Vector2( 68, 51 )
 texture = ExtResource( 2 )
 
-[node name="Apple" type="Sprite" parent="Apple3"]
-position = Vector2( 92, -155 )
+[node name="Apple4" type="Sprite" parent="Apples"]
+position = Vector2( 193, 63 )
 texture = ExtResource( 2 )
+
+[node name="Piggy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 196, 127 )
+SPEED = 100
