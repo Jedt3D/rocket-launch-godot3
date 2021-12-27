@@ -38,5 +38,17 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Apple" type="Sprite" parent="."]
-position = Vector2( 609, 337 )
+position = Vector2( 502, 237 )
+texture = ExtResource( 2 )
+
+[node name="Apple2" type="Sprite" parent="."]
+position = Vector2( 294, 200 )
+texture = ExtResource( 2 )
+
+[node name="Apple3" type="Sprite" parent="."]
+position = Vector2( 227, 265 )
+texture = ExtResource( 2 )
+
+[node name="Apple" type="Sprite" parent="Apple3"]
+position = Vector2( 92, -155 )
 texture = ExtResource( 2 )
