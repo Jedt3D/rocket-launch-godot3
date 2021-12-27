@@ -54,6 +54,11 @@ texture={
 "svg/scale": 1.0
 }
 
+[layer_names]
+
+2d_physics/layer_1="Pig"
+2d_physics/layer_2="Apples"
+
 [physics]
 
 common/enable_pause_aware_picking=true

@@ -67,6 +67,7 @@ tracks/0/keys = {
 }
 
 [node name="Piggy" type="Area2D"]
+collision_mask = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true,
