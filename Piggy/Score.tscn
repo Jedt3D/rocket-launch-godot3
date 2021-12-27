@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.5, 6.5 )
+
+[node name="Score" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CurrentScore" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 25.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 10.5, 6.5 )
+shape = SubResource( 1 )

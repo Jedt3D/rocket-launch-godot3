@@ -7,5 +7,5 @@ learning something new
 3. [ ] **Space Shooter** - Instancing, particle, setter-getter
 4. [ ] **Metroidvania** - Platform physics
 
-> *don't forget* you have to set [Project Setting > General > Allow HiDpi]
+> *don't forget* you have to set [Project Setting > General > Rendering > Allow HiDpi]
 
