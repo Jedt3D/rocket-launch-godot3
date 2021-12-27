@@ -3,7 +3,7 @@
 learning something new
 
 1. [x] **Rocket Launcher** 
-2. [ ] **Piggy** - Basic input, movement, collision
+2. [x] **Piggy** - Basic input, movement, collision
 3. [ ] **Space Shooter** - Instancing, particle, setter-getter
 4. [ ] **Metroidvania** - Platform physics
 
